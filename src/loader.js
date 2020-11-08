@@ -41,9 +41,9 @@ export default class Loader extends Component{
       this.setState({
         iconsLoaded:true,
       });
-      /*setTimeout(()=>{
+      setTimeout(()=>{
         this.setReadyState();
-      },8000);*/
+      },1000);
     }
   }
 
@@ -59,9 +59,9 @@ export default class Loader extends Component{
         userLoggedIn:true,
       });
     }
-    setTimeout(()=>{      
+    setTimeout(()=>{
       this.setIconsLoadedState();
-    },4000);
+    },2000);
   }
 //{<Intro setReadyState={()=>that.setReadyState()}/>}
   render(){
