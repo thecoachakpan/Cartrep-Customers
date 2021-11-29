@@ -7,17 +7,18 @@ const {height, width} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   body:{
-    backgroundColor:'white',
+    backgroundColor:'#FF0200',
     alignItems:'center',
     justifyContent:'center',
     height:height,
     width:width,
     position:'absolute',
     zIndex:10,
+    opacity:0,
   },
   splash:{
-    width:(width),
-    height:(height),
+    width:(width/4),
+    height:(width/4),
     alignSelf:'center',
   }
 });
@@ -34,9 +35,9 @@ export default class Splash extends Component{
       <View style={styles.body}>
         <View style={styles.splash}>
           <Image
-            source={require('./assets/images/bg/splash.jpg')}
+            source={require('./assets/images/logo/logoWhite.png')}
             resizeMode="contain"
-            style={{width:'100%',height:'100%'}}
+            style={{width:'90%',height:'90%'}}
           />
         </View>
       </View>

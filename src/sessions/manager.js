@@ -2,42 +2,74 @@ import React, {Component} from 'react';
 
 import {AsyncStorage} from 'react-native';
 
-export default class App extends Component{
+class Manager extends Component{
   constructor(props){
     super(props);
     this.state = {
-      session_id:"",
-      user_id:"",
     };
+    this.userdata = {};
+  }
+
+
+  // Get active session user_data
+
+  getUserData(){
+    return this.userdata;
+  }
+
+  //Set Logged User session
+
+  async setUserSession(uid,fname,lname,email,phone,address,area,landmark,lastLogged){
+    return await AsyncStorage.multiSet([
+      ['uid',uid],
+      ['firstName',fname],
+      ['lastName',lname],
+      ['email',email],
+      ['phone',phone],
+      ['address',address],
+      ['area',area],
+      ['landmark',landmark],
+      ['lastLogged',lastLogged],
+
+    ]).then(()=>{
+      this.loadUserSession();
+      return true;
+    }).catch((error)=>{
+      return false;
+    });
   }
 
   //Load Active User Session
 
-  loadUserSession(){
-    var keys = ['user_id'];
-    let user_data;
-    AsyncStorage.multiGet(keys,(err,stores)=>{
+  async loadUserSession(){
+    var keys = ['uid','firstName','lastName','email','phone','address','area','landmark','lastLogged'];
+    let userdata;
+    return await AsyncStorage.multiGet(keys,(err,stores)=>{
       if(stores[0][1]!=undefined){
-        user_data = {};
+        userdata = {};
         for(var i in keys){
-          user_data[keys[i]] = stores[i][1];
+          userdata[keys[i]] = stores[i][1];
         }
       }
     }).then(()=>{
-      if(user_data!=undefined){
-        this.setState(user_data);
+      if(userdata!=undefined){
+        this.userdata = userdata;
+        return userdata;
+      }else{
+        return false;
       }
     });
   }
 
   //Check Active User Session
 
-  hasUserSession(){
-    if(this.state.user_id==""){
-      return false;
-    }
-    return true;
+  async hasUserSession(){
+    return await this.loadUserSession();
   }
 
 
 }
+
+const manager = new Manager;
+
+export default manager;

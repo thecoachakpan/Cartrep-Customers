@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "1084316135833",
+    "firebase_url": "https://cartrep-ab166.firebaseio.com",
+    "project_id": "cartrep-ab166",
+    "storage_bucket": "cartrep-ab166.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084316135833:android:2d2c08113d6b5e9f7c6308",
+        "android_client_info": {
+          "package_name": "com.cartrep.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084316135833-4k1sjovldfuaiq7pirajtabv4hcb92gj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartrep.admin",
+            "certificate_hash": "7f133e6fa801c21ea691b21ee469da5cbb2bc7f5"
+          }
+        },
+        {
+          "client_id": "1084316135833-71lq509r3k6lpo5smjj98jjj0i57emvj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartrep.admin",
+            "certificate_hash": "9b079932a56ac022b429a9a358aaafbb8f225309"
+          }
+        },
+        {
+          "client_id": "1084316135833-meoftmkkcs9udn8rlhkh93e1bqt4muuc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartrep.admin",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1084316135833-5j6ssf5jamklkno1lfok7ks7d12tfh82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSyutMm9yDuTPDuhVueTVGtPvMyJOhz5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084316135833-5j6ssf5jamklkno1lfok7ks7d12tfh82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084316135833:android:9939cacc572b8b7e7c6308",
+        "android_client_info": {
+          "package_name": "com.cartrep.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084316135833-95b0h5i41jtcetf8rjqqp5rsq9jp4g73.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartrep.user",
+            "certificate_hash": "f68b5c9cddcbea1dff0413a0512e1867b9b719f5"
+          }
+        },
+        {
+          "client_id": "1084316135833-m6uhsnbgq58eeef8v2hebm82keeh7t78.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartrep.user",
+            "certificate_hash": "7f133e6fa801c21ea691b21ee469da5cbb2bc7f5"
+          }
+        },
+        {
+          "client_id": "1084316135833-qjcahnjkhm7r05gvctlptutcfkekcf48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartrep.user",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1084316135833-5j6ssf5jamklkno1lfok7ks7d12tfh82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSyutMm9yDuTPDuhVueTVGtPvMyJOhz5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084316135833-5j6ssf5jamklkno1lfok7ks7d12tfh82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

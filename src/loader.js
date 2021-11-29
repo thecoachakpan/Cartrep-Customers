@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, Image, StyleSheet,StatusBar, Dimensions, NativeEventEmitter} from 'react-native';
 
 //Import Session Manager
-import Session from './sessions/manager';
-
-const sessionManager = new Session;
+import sessionManager from './sessions/manager';
 
 
 //SplashScreen
@@ -28,8 +26,16 @@ export default class Loader extends Component{
       iconsLoaded:false,
     };
     library.add(fas,fab);
-    this.checkUserSession();
+    this.eventMaster = new NativeEventEmitter();
+    this.eventListener;
+  }
 
+  componentDidMount(){
+    this.checkUserSession();
+  }
+
+  componentWillUnmount(){
+    //this.eventListener.remove();
   }
   //Set app ready state and hide splash screen
   setIconsLoadedState = ()=>{
@@ -43,7 +49,7 @@ export default class Loader extends Component{
       });
       setTimeout(()=>{
         this.setReadyState();
-      },1000);
+      },200);
     }
   }
 
@@ -53,21 +59,23 @@ export default class Loader extends Component{
     });
   }
 
-  checkUserSession = ()=>{
-    if(sessionManager.hasUserSession()){
+  async checkUserSession(){
+    var stat = await sessionManager.hasUserSession();
+    if(stat){
       this.setState({
         userLoggedIn:true,
       });
     }
     setTimeout(()=>{
       this.setIconsLoadedState();
-    },2000);
+    },200);
   }
 //{<Intro setReadyState={()=>that.setReadyState()}/>}
   render(){
     var that = this;
     return(
       <View>
+        <StatusBar backgroundColor="#FF4800" barStyle={"light-content"} />
         {((!this.state.appReady)&&(!this.state.iconsLoaded))&&<Splash/>}
         {((this.state.appReady)&&(this.state.iconsLoaded))&&<AppAccess userState={this.state.userLoggedIn}/>}
       </View>

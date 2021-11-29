@@ -7,6 +7,9 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 //Import All Navigator Screens
 
 import UserInputPhone from '../screens/UserInputPhone';
+import UserVerifyPhone from '../screens/UserVerifyPhone';
+import UserCompleteProfile from '../screens/UserCompleteProfile';
+import AllowLocationAccess from '../screens/AllowLocationAccess';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +34,9 @@ export default class App extends Component{
       <SafeAreaView style={styles.body}>
         <Stack.Navigator initialRouteName="UserInputPhone" headerMode={"none"}>
           <Stack.Screen name="UserInputPhone" component={UserInputPhone} />
+          <Stack.Screen name="UserVerifyPhone" component={UserVerifyPhone} />
+          <Stack.Screen name="UserCompleteProfile" component={UserCompleteProfile} />
+          <Stack.Screen name="AllowLocationAccess" component={AllowLocationAccess} />
         </Stack.Navigator>
       </SafeAreaView>
     );
